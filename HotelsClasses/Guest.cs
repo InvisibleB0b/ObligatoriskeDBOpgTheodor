@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HotelsClasses
 {
-    class Guest
+   public class Guest
     {
         public int Guest_Id { get; set; }
         public string Guest_Name { get; set; }

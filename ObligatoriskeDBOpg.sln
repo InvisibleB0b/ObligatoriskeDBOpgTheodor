@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObligatoriskeDBOpg", "Oblig
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelsClasses", "HotelsClasses\HotelsClasses.csproj", "{CE9FD8FE-4329-45A8-9B5C-77DA882BADF2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelsControllers", "HotelsControllers\HotelsControllers.csproj", "{F49E44F7-6AD9-4942-A67A-271E7D730B85}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{CE9FD8FE-4329-45A8-9B5C-77DA882BADF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE9FD8FE-4329-45A8-9B5C-77DA882BADF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE9FD8FE-4329-45A8-9B5C-77DA882BADF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F49E44F7-6AD9-4942-A67A-271E7D730B85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F49E44F7-6AD9-4942-A67A-271E7D730B85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F49E44F7-6AD9-4942-A67A-271E7D730B85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F49E44F7-6AD9-4942-A67A-271E7D730B85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -52,5 +52,15 @@
   <ItemGroup>
     <Folder Include="SQL Creations scripts\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HotelsClasses\HotelsClasses.csproj">
+      <Project>{ce9fd8fe-4329-45a8-9b5c-77da882badf2}</Project>
+      <Name>HotelsClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HotelsControllers\HotelsControllers.csproj">
+      <Project>{f49e44f7-6ad9-4942-a67a-271e7d730b85}</Project>
+      <Name>HotelsControllers</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

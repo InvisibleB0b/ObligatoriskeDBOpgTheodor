@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HotelsClasses
 {
-    class Booking
+   public class Booking
     {
         public int Booking_Id { get; set; }
         public int Room_Id { get; set; }
