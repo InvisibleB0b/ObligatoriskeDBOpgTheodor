@@ -16,7 +16,7 @@ namespace HotelsControllers
 
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
-                string queryString = "select * from Hotel";
+                string queryString = "select * from Hotels";
                 SqlCommand command = new SqlCommand(queryString, connection);
                 command.Connection.Open();
 
