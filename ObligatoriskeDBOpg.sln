@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObligatoriskeDBOpg", "ObligatoriskeDBOpg\ObligatoriskeDBOpg.csproj", "{7B523E0F-2BC8-4904-AFF2-CBCAB3AC10B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelsClasses", "HotelsClasses\HotelsClasses.csproj", "{CE9FD8FE-4329-45A8-9B5C-77DA882BADF2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B523E0F-2BC8-4904-AFF2-CBCAB3AC10B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B523E0F-2BC8-4904-AFF2-CBCAB3AC10B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B523E0F-2BC8-4904-AFF2-CBCAB3AC10B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B523E0F-2BC8-4904-AFF2-CBCAB3AC10B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE9FD8FE-4329-45A8-9B5C-77DA882BADF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE9FD8FE-4329-45A8-9B5C-77DA882BADF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE9FD8FE-4329-45A8-9B5C-77DA882BADF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE9FD8FE-4329-45A8-9B5C-77DA882BADF2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D75B9D5-2B31-4C20-AEDE-F3938B100E97}
+	EndGlobalSection
+EndGlobal
