@@ -46,7 +46,33 @@ namespace HotelsControllers
 
         public Hotel GetFromId(int number)
         {
-            throw new NotImplementedException();
+
+            Hotel hotel = new Hotel();
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                string queryString = $"select * from Hotels WHERE Hotel_Id = {number}";
+                SqlCommand command = new SqlCommand(queryString, connection);
+                command.Connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    hotel.Hotel_Id = (int) reader["Hotel_Id"];
+                    hotel.Hotel_Name = (string) reader["Hotel_Name"];
+                    hotel.Hotel_Address = (string) reader["Hotel_Address"];
+
+
+
+                }
+
+                command.Connection.Close();
+            }
+
+
+            return hotel;
         }
 
         public bool Create(Hotel obj)

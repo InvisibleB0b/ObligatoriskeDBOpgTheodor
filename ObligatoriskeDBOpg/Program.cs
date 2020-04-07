@@ -21,6 +21,8 @@ namespace ObligatoriskeDBOpg
                 Console.WriteLine(hotel);
             }
 
+            Console.WriteLine(manageHotels.GetFromId(2));
+
             Console.ReadKey();
 
         }
