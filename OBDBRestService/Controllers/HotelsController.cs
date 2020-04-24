@@ -79,7 +79,7 @@ namespace OBDBRestService.Controllers
         // POST api/hotels
         public int Post([FromBody]Hotel value)
         {
-            int inserted_id = 1;
+            int inserted_id = 0;
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 string queryString = $"INSERT INTO Hotels VALUES('{value.Hotel_Name}', '{value.Hotel_Address}') SELECT Hotel_Id FROM Hotels WHERE Hotel_Id = @@IDENTITY";
@@ -100,12 +100,37 @@ namespace OBDBRestService.Controllers
         }
 
         // PUT api/hotels/5
-        public void Put(int id, [FromBody]Hotel value)
+        public Hotel Put(int id, [FromBody]Hotel value)
         {
+            Hotel h = new Hotel();
 
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
-                string queryString = $"UPDATE Hotels SET Hotel_Name = '{value.Hotel_Name}', Hotel_Address = '{value.Hotel_Address}' WHERE Hotel_Id = {id}";
+                string queryString = $"UPDATE Hotels SET Hotel_Name = '{value.Hotel_Name}', Hotel_Address = '{value.Hotel_Address}' WHERE Hotel_Id = {id} SELECT * FROM Hotels WHERE Hotel_Id = {id}";
+                SqlCommand command = new SqlCommand(queryString, connection);
+                command.Connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    h.Hotel_Id = (int)reader["Hotel_Id"];
+                    h.Hotel_Name = (string)reader["Hotel_Name"];
+                    h.Hotel_Address = (string)reader["Hotel_Address"];
+                }
+
+                command.Connection.Close();
+            }
+            return h;
+
+        }
+
+        // DELETE api/hotels/5
+        public void Delete(int id)
+        {
+
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                string queryString = $"DELETE Hotels WHERE Hotel_Id = {id}";
                 SqlCommand command = new SqlCommand(queryString, connection);
                 command.Connection.Open();
 
@@ -113,13 +138,6 @@ namespace OBDBRestService.Controllers
 
                 command.Connection.Close();
             }
-
-
-        }
-
-        // DELETE api/hotels/5
-        public void Delete(int id)
-        {
         }
     }
 }
