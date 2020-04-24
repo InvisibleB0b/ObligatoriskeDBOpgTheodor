@@ -48,7 +48,7 @@ namespace OBDBRestService.Controllers
             return hotels;
         }
 
-        // GET api/Hotels/Roskilde
+        // GET api/Hotels?str=Roskilde
         public Hotel Get(string str)
         {
             Hotel hotel = new Hotel();
@@ -77,19 +77,26 @@ namespace OBDBRestService.Controllers
         }
 
         // POST api/hotels
-        public void Post([FromBody]Hotel value)
+        public int Post([FromBody]Hotel value)
         {
-
+            int inserted_id = 1;
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
-                string queryString = $"INSERT INTO Hotels VALUES({value.Hotel_Name}, {value.Hotel_Address})";
+                string queryString = $"INSERT INTO Hotels VALUES('{value.Hotel_Name}', '{value.Hotel_Address}') SELECT Hotel_Id FROM Hotels WHERE Hotel_Id = @@IDENTITY";
                 SqlCommand command = new SqlCommand(queryString, connection);
                 command.Connection.Open();
 
-                command.ExecuteNonQuery();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    inserted_id = (int)reader[0];
+                }
+
+               
 
                 command.Connection.Close();
-            }
+            } 
+            return inserted_id;
         }
 
         // PUT api/hotels/5
